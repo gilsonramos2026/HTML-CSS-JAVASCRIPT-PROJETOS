@@ -1,0 +1,213 @@
+/* ============ LAYOUT GERAL ============ */
+main#app {
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 2rem 1.5rem 4rem;
+ min-height: 60vh;
+}
+.page-intro { max-width: 60ch; color: var(--text-muted); }
+/* ============ HEADER ============ */
+.header {
+ border-bottom: 1px solid var(--border);
+ background: var(--surface);
+}
+.header__inner {
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 1rem 1.5rem;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 1rem;
+}
+.header__brand {
+ font-family: var(--font-display);
+ font-weight: 700;
+ font-size: 1.2rem;
+ color: var(--text);
+ text-decoration: none;
+}
+.nav { display: flex; gap: 1.5rem; align-items: center; }
+.nav a {
+ color: var(--text-muted);
+ text-decoration: none;
+ font-size: 0.95rem;
+ padding: 0.35rem 0;
+ border-bottom: 2px solid transparent;
+}
+.nav a:hover { color: var(--text); }
+.nav a.active {
+ color: var(--text);
+ border-bottom-color: var(--accent);
+}
+/* ============ FOOTER ============ */
+.footer {
+ border-top: 1px solid var(--border);
+ color: var(--text-muted);
+ font-size: 0.9rem;
+}
+.footer__inner {
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 1.5rem;
+ display: flex;
+ justify-content: space-between;
+ flex-wrap: wrap;
+ gap: 0.5rem;
+}
+/* ============ BOTÕES (componente reutilizável) ============ */
+.btn {
+ font-family: var(--font-body);
+ font-size: 0.95rem;
+ font-weight: 500;
+ padding: 0.55rem 1.1rem;
+ border-radius: var(--radius);
+ border: 1px solid var(--border);
+ background: var(--surface);
+ color: var(--text);
+ cursor: pointer;
+ transition: background 0.15s ease, transform 0.05s ease;
+}
+.btn:hover { background: var(--surface-hover); }
+.btn:active { transform: scale(0.98); }
+.btn--primary {
+ background: var(--accent);
+ border-color: var(--accent);
+ color: var(--accent-text);
+}
+.btn--primary:hover { filter: brightness(1.08); }
+.btn--icon {
+ width: 2.2rem;
+ height: 2.2rem;
+ padding: 0;
+ display: grid;
+ place-items: center;
+ font-size: 1.1rem;
+}
+/* ============ CARDS (grid de produtos) ============ */
+.grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+ gap: var(--gap);
+ margin-top: 1.5rem;
+}
+.card {
+ background: var(--surface);
+ border: 1px solid var(--border);
+ border-radius: var(--radius);
+ padding: 1.1rem;
+}
+.card h3 { font-size: 1.05rem; }
+.card .price {
+ color: var(--accent);
+ font-weight: 600;
+ margin-top: 0.5rem;
+}
+.state-msg {
+ color: var(--text-muted);
+ padding: 2rem 0;
+}
+.state-msg--erro { color: #C0392B; }
+/* ============ SESSÃO (header: entrar / usuário logado) ============ */
+.session-area {
+ display: flex;
+ align-items: center;
+ gap: 0.6rem;
+}
+.session-link {
+ color: var(--text-muted);
+ text-decoration: none;
+ font-size: 0.95rem;
+}
+.session-link:hover { color: var(--text); }
+.session-name {
+ font-size: 0.9rem;
+ color: var(--text-muted);
+}
+.badge {
+ font-size: 0.72rem;
+ font-weight: 600;
+ padding: 0.15rem 0.5rem;
+ border-radius: 999px;
+ letter-spacing: 0.02em;
+}
+.badge--admin {
+ background: var(--accent);
+ color: var(--accent-text);
+}
+.badge--publico {
+ background: var(--border);
+ color: var(--text);
+}
+/* ============ FORMULÁRIOS (login e cadastro) ============ */
+.form {
+ max-width: 360px;
+ display: flex;
+ flex-direction: column;
+ gap: 1rem;
+ margin-top: 1.5rem;
+}
+.field {
+ display: flex;
+ flex-direction: column;
+ gap: 0.4rem;
+}
+.field label {
+ font-size: 0.85rem;
+ color: var(--text-muted);
+}
+.field input {
+ font-family: var(--font-body);
+ font-size: 0.95rem;
+ padding: 0.6rem 0.75rem;
+ border-radius: var(--radius);
+ border: 1px solid var(--border);
+ background: var(--surface);
+ color: var(--text);
+}
+.field input:focus {
+ outline: 2px solid var(--accent);
+ outline-offset: 1px;
+}
+.form-msg {
+ font-size: 0.9rem;
+ padding: 0.6rem 0.8rem;
+ border-radius: var(--radius);
+}
+.form-msg--erro {
+ background: rgba(192, 57, 43, 0.12);
+ color: #C0392B;
+}
+.form-msg--ok {
+ background: rgba(47, 168, 138, 0.14);
+ color: var(--accent);
+}
+.form-footer-link {
+ font-size: 0.9rem;
+ color: var(--text-muted);
+}
+.form-footer-link a { color: var(--accent); text-decoration: none; }
+.products-toolbar {
+ display: flex;
+ justify-content: flex-end;
+ margin-bottom: -0.5rem;
+}
+/* ============ AÇÕES DE ADMIN DENTRO DO CARD (editar/remover) ============ */
+.card__actions {
+ margin-top: 0.9rem;
+ padding-top: 0.75rem;
+ border-top: 1px solid var(--border);
+}
+.card__actions-row {
+ display: flex;
+ gap: 0.5rem;
+}
+.form--card {
+ max-width: none;
+ margin-top: 0.75rem;
+ gap: 0.6rem;
+}
+@media (max-width: 560px) {
+ .header__inner { flex-direction: column; align-items: flex-start; }
+ .nav { flex-wrap: wrap; gap: 1rem; }
+}
