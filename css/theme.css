@@ -1,0 +1,43 @@
+/* ===================================================
+ TEMA — todo o app lê cor daqui, nunca escreve hex
+ direto nos componentes. Trocar de tema = troca de
+ atributo data-theme no <html>, feita em js/theme.js
+=================================================== */
+:root {
+ /* tema escuro (padrão) */
+ --bg: #1B1F24;
+ --surface: #23282F;
+ --surface-hover: #2A303A;
+ --border: #313842;
+ --text: #E8ECEF;
+ --text-muted: #9AA5B1;
+ --accent: #2FA88A;
+ --accent-text: #0E1512;
+ --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+ --font-body: "Inter", "Segoe UI", sans-serif;
+ --radius: 10px;
+ --gap: 1.25rem;
+}
+html[data-theme="light"] {
+ --bg: #F7F5F1;
+ --surface: #FFFFFF;
+ --surface-hover: #EFECE6;
+ --border: #DDD8CE;
+ --text: #1B1F24;
+ --text-muted: #5C6570;
+ --accent: #1F8F73;
+ --accent-text: #FFFFFF;
+}
+* { box-sizing: border-box; }
+body {
+ margin: 0;
+ background: var(--bg);
+ color: var(--text);
+ font-family: var(--font-body);
+ transition: background 0.2s ease, color 0.2s ease;
+}
+h1, h2, h3 {
+ font-family: var(--font-display);
+ letter-spacing: -0.01em;
+ margin: 0 0 0.5rem;
+}

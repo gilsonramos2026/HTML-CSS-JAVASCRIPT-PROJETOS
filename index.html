@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" data-theme="dark">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>projetos javaScript</title>
+   <title>Catálogo — Tutorial JS Puro + Spring Boo</title>
+
+   <!-- Fontes: uma para títulos, outra para o corpo do texto -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+   
+   <link rel="stylesheet" href="css/theme.css">
+   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   <header>
-      
-   </header>
+<!-- O header é montado pelo JS (js/components.js), aqui só existe o slot -->
+<header id="site-header"></header>
+<!-- Toda a navegação troca o conteúdo aqui dentro, sem recarregar a página -->
+<main id="app"></main>
+<footer id="site-footer"></footer>
+
+<script src="js/theme.js"></script>
+
 </body>
 </html>
